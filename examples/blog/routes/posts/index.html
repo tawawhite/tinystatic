@@ -4,7 +4,7 @@ template: default.html
 
 {{define "body"}}
 <h1>Posts</h1>
-
+<h1 class="is-size-1 has-text-success">GeeksforGeeks</h1>
 <ul>
 {{range .Routes | filterFilePath "**/posts/*.md" | sortDesc "date" | limit 10}}
     <li>

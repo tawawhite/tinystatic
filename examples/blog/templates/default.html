@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="/static/morphdom.js" async></script>
+        <script src="/static/hotreload.js" async></script>
         {{template "head" .}}
     </head>
     <body>
         <div class="container">
             {{template "navbar" .}}
-            {{template "body" .}}
+            <div style="min-height:calc(100vh - 5rem);">
+                <strong>Hello</strong>
+                {{template "body" .}}
+            </div>
+            {{template "footer" .}}
         </div>
     </body>
 </html>

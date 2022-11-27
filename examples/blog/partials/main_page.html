@@ -1,0 +1,76 @@
+{{define "featured"}}
+<article class="columns featured">
+    <a class="column is-7 post-img " href={{.Href}}>
+        <img src="{{.Meta.image}}" alt="">
+    </a>
+    <div class="column is-5 featured-content va">
+        <div>
+            <a href={{.Href}}>{{.Meta.title}}</a>
+                <h3 class="heading post-category">{{index .Meta.tags 0}}</h3>
+                <h1 class="title post-title">{{.Meta.title}}</h1>
+                <p class="post-excerpt">{{.Meta.excerpt | fn "e=>e.split(' ').slice(0,50).join(' ')" }} <a href={{.Href}} class="">Read More...</a></p>
+        </div>
+
+    </div>
+</article>
+{{end}}
+
+{{define "large"}}
+<div class="column post is-6">
+<article class="columns is-multiline">
+    <div class="column is-12 post-img">
+      <img src="{{.Meta.image}}" alt="">
+    </div>
+    <div class="column is-12 featured-content">
+      <h3 class="heading post-category">{{index .Meta.tags 0}}</h3>
+      <h1 class="title post-title">{{.Meta.title}}</h1>
+      <p class="post-excerpt">{{.Meta.excerpt | fn "e=>e.split(' ').slice(0,21).join(' ')"}} <a href={{.Href}}>Read More...</a> </p>
+      <br/>
+    </div>
+</article>
+</div>
+{{end}}
+
+{{define "medium"}}
+<div class="column post is-4">
+<article class="columns is-multiline">
+    <div class="column is-12 post-img">
+      <img src="{{.Meta.image}}" alt="">
+    </div>
+    <div class="column is-12 featured-content" style="height: 18rem;">
+      <h3 class="heading post-category">{{index .Meta.tags 0}}</h3>
+      <h1 class="title post-title">{{.Meta.title}}</h1>
+      <p class="post-excerpt">{{.Meta.excerpt | fn "e=>e.split(' ').slice(0,21).join(' ')"}}</p>
+      <br/>
+    </div>
+    <a href={{.Href}} class="button is-primary">Read More...</a>
+</article>
+</div>
+{{end}}
+
+{{define "medium2"}}
+<div class="card column">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="{{.Meta.image}}" alt="">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <!-- <div class="media-left">
+          <figure class="image is-48x48">
+            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+          </figure>
+        </div> -->
+        <div class="media-content">
+            <p class="heading post-category">{{index .Meta.tags 0}}</p>
+            <p class="title is-4">{{.Meta.title}}</p>
+        </div>
+      </div>
+  
+      <p class="content">
+        {{.Meta.excerpt | fn "e=>e.split(' ').slice(0,21).join(' ')"}} <a href={{.Href}} class="">Read More...</a>
+      </p>
+    </div>
+  </div>
+  {{end}}
